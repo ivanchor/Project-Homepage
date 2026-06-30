@@ -1,5 +1,6 @@
 import './project.css'
-import project1 from '.././assets/photos/project1.jpg'
+import { projectList } from './projectlist'
+
 
 export function createProject(){
     return `
@@ -7,146 +8,47 @@ export function createProject(){
         <h1 class='project-title'>My Projects</h1>
 
         <div class='project-content'>
-            <div class='project-showcase'>
-                <a 
-                    href='https://youtube.com'>
-                    <img class='project-showcase-image'
-                        src='${project1}'
-                        alt='Project image'
-                    >
-                </a>
-
-                <div class='project-showcase-description'>
-                    <h3 class='project-showcase-title'>
-
-                        Elaina photo 1
-
-                        <div class='socials'>
-                            <a href='https://github.com/ivanchor'>
-                                <img class='icon' 
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
-                                    alt='Github'/>
-                            </a>
-                        </div>
-                    </h3>
-
-                    <p class='project-showcase-body'>A photo of Elaina basking under a tree on her way towards her next adventure!</p>
-                </div>                
-            </div>
-
-
-
-
-            <div class='project-showcase'>
-                <a class='project-showcase-image'
-                    href='https://youtube.com'>
-                    <img
-                        src=''
-                        alt='Project image'
-                    >
-                </a>
-
-                <div class='project-showcase-description'>
-                    <h3 class='project-showcase-title'>
-
-                        Project name
-
-                        <div class='socials'>
-                            <a href='https://github.com/ivanchor'>
-                                <img class='icon' 
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
-                                    alt='Github'/>
-                            </a>
-                
-                            <a href='https://www.linkedin.com/in/ivan-chor/'>
-                                <img class='icon'
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" 
-                                    alt='Linkedin'/>
-                            </a>
-                        </div>
-                    </h3>
-
-                    <p class='project-showcase-body'>Some small description about project</p>
-                </div>                
-            </div>
-
-
-
-
-            <div class='project-showcase'>
-                <a class='project-showcase-image'
-                    href='https://youtube.com'>
-                    <img
-                        src=''
-                        alt='Project image'
-                    >
-                </a>
-
-                <div class='project-showcase-description'>
-                    <h3 class='project-showcase-title'>
-
-                        Project name
-
-                        <div class='socials'>
-                            <a href='https://github.com/ivanchor'>
-                                <img class='icon' 
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
-                                    alt='Github'/>
-                            </a>
-                
-                            <a href='https://www.linkedin.com/in/ivan-chor/'>
-                                <img class='icon'
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" 
-                                    alt='Linkedin'/>
-                            </a>
-                        </div>
-                    </h3>
-
-                    <p class='project-showcase-body'>Some small description about project</p>
-                </div>                
-            </div>
-
-
-
-
-            <div class='project-showcase'>
-                <a class='project-showcase-image'
-                    href='https://youtube.com'>
-                    <img
-                        src=''
-                        alt='Project image'
-                    >
-                </a>
-
-                <div class='project-showcase-description'>
-                    <h3 class='project-showcase-title'>
-
-                        Project name
-
-                        <div class='socials'>
-                            <a href='https://github.com/ivanchor'>
-                                <img class='icon' 
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
-                                    alt='Github'/>
-                            </a>
-                
-                            <a href='https://www.linkedin.com/in/ivan-chor/'>
-                                <img class='icon'
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" 
-                                    alt='Linkedin'/>
-                            </a>
-                        </div>
-                    </h3>
-
-                    <p class='project-showcase-body'>Some small description about project</p>
-                </div>                
-            </div>
-            
-
-
+            ${projectList.map(project=>
+                createProjectShowcase(
+                    project.projectLink,
+                    project.githubLink,
+                    project.image,
+                    project.title,
+                    project.description
+                )
+            ).join('')}
         </div>
-    
-
     </div>
+    `
+}
+
+function createProjectShowcase(projectLink, githubLink, image, title, description){
+    return`
+        <div class='project-showcase'>
+                <a 
+                    href='${projectLink}'>
+                    <img class='project-showcase-image'
+                        src='${image}'
+                        alt='Project image'
+                    >
+                </a>
+
+                <div class='project-showcase-description'>
+                    <h3 class='project-showcase-title'>
+
+                        ${title}
+
+                        <div class='socials'>
+                            <a href='${githubLink}'>
+                                <img class='icon' 
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
+                                    alt='Github'/>
+                            </a>
+                        </div>
+                    </h3>
+
+                    <p class='project-showcase-body'>${description}</p>
+                </div>                
+            </div>
     `
 }
