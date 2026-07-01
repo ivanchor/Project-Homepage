@@ -1,23 +1,21 @@
 .project-main{
-    margin: 50px;
+    
 }
 
 .project-content{
     display: grid;
-    /* grid-template-areas: 
-        'showcase showcase showcase'; */
-
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 20px;
-    border: solid orange 2px;
+    column-gap: 100px;
+    row-gap: 50px;
+
 }
 
 .project-showcase{
     display: flex;
     flex-direction: column;
 
-    width: 400px;
+    min-width: 400px;
     height: 600px;
     overflow: hidden;
     
@@ -45,16 +43,26 @@
 .project-showcase-description{
     height: 40%;
     background: lightgreen;
+    padding: 10px 30px;
 }
 
 .project-showcase-title{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: solid black 2px;
 }
 
 .socials{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
+.socials svg {
+    width: 24px;
+    height: 24px;
+    fill: black;
 }
 
 .project-showcase-body{
