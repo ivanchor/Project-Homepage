@@ -4,7 +4,7 @@ import { projectList } from './projectlist'
 
 export function createProject(){
     return `
-    <div class='project-main'>
+    <main class='project-main'>
         <h1 class='project-title'>My Projects</h1>
 
         <div class='project-content'>
@@ -18,7 +18,7 @@ export function createProject(){
                 )
             ).join('')}
         </div>
-    </div>
+    </main>
     `
 }
 

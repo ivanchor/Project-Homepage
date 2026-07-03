@@ -3,7 +3,7 @@ import headerImage from '.././assets/photos/headerImage.PNG'
 
 export function createHeader(){
     return `
-    <main class='header-main'>
+    <header class='header-main'>
         <div class='header-background'></div>
 
         <div class='header-maincontainer'>
@@ -45,6 +45,6 @@ export function createHeader(){
             </div>
         </div>
 
-    </main>
+    </header>
     `
 }
