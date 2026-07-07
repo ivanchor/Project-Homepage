@@ -1,6 +1,5 @@
 import './contact.css'
 import contactImage from '.././assets/photos/contactImage.PNG'
-import test from '.././assets/photos/project1.jpg'
 
 export function createContact(){
     return `
@@ -26,7 +25,7 @@ export function createContact(){
                 </div>
 
                 <img class='contact-image' 
-                    src='${test}'
+                    src='${contactImage}'
                     alt='Contact-Image'
                 >
 
