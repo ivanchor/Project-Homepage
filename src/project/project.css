@@ -1,5 +1,5 @@
 .project-main{
-    
+
 }
 
 .project-content{
@@ -8,14 +8,12 @@
     grid-template-rows: 1fr 1fr;
     column-gap: 100px;
     row-gap: 50px;
-
 }
 
 .project-showcase{
     display: flex;
     flex-direction: column;
-
-    min-width: 400px;
+    max-width: 400px;
     height: 600px;
     overflow: hidden;
     
@@ -67,4 +65,37 @@
 
 .project-showcase-body{
 
+}
+
+@media screen and (width <= 800px){
+    .project-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 100px;
+    row-gap: 50px;
+    }
+}
+
+@media screen and (800px <= width <= 1024px){
+    .project-content{
+    grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (width <= 800px){
+    .project-content{
+    grid-template-columns: 1fr;
+    }
+
+    .project-main{
+        display: grid;
+        place-items: center;
+    }
+}
+
+@media screen and (width <= 500px){
+    .project-content{
+        grid-template-columns: 1fr;
+    }
 }
